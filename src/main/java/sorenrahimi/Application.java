@@ -20,7 +20,7 @@ public class Application {
         PrestitiDAO prestitiDAO = new PrestitiDAO();
 
         Libro libro = new Libro();
-        libro.setISBN("978-3-16-148410-1");
+        libro.setISBN("978-3-16-148410-3");
         libro.setTitolo("Il Signore degli Anelli");
         libro.setAnnoPubblicazione(1954);
         libro.setNumeroPagine(1178);
@@ -59,7 +59,7 @@ public class Application {
         List<Prestito> prestitiScaduti = prestitiDAO.cercaPrestitiScadutiNonRestituiti();
         if (!prestitiUtente.isEmpty()){
             System.out.println("Prestiti scaduti e non ancora restituiti:");
-            for (Prestito p : prestitiUtente) {
+            for (Prestito p : prestitiScaduti) {
                 System.out.println("- " + p.getElementoPrestato().getTitolo() + " - Restituzione prevista: " + p.getDataRestituzionePrevista());
             }
         }else {
